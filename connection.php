@@ -9,7 +9,7 @@
     $link = sqlsrv_connect($serverName, $connectionOptions);
     
     if($link) {
-        echo "Connection established.<br />";
+        echo "Connection established with the Database.<br />";
     }else{
         echo "Connection could not be established.<br />";
      die( print_r( sqlsrv_errors(), true));

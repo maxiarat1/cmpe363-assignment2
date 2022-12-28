@@ -83,9 +83,9 @@ include "connection.php"
 
 <?php
 
-if(isset($_POST["insert"]))
-{
-  sqlsrv_query($link,"insert into [SalesLT].[Customer] values(NULL,NULL,NULL,'$_POST[firstname]',NULL,'$_POST[lastname]',NULL,NULL,NULL,'$_POST[address]','$_POST[phone]',NULL,NULL,NULL,NULL)");
+if(isset($_POST["insert"])) 
+{                                                                          
+  sqlsrv_query($link,"INSERT INTO [SalesLT].[Customer] (FirstName,LastName,EmailAddress,Phone,PasswordHash,PasswordSalt) values('$_POST[firstname]','$_POST[lastname]','$_POST[address]','$_POST[phone]','1234','12345')");
   
   ?>
   <script type="text/javascript">
@@ -95,8 +95,8 @@ if(isset($_POST["insert"]))
 
 }
 if(isset($_POST["delete"])){
-  sqlsrv_query($link,"delete FROM [SalesLT].[Customer] where firstname='$_POST[firstname]'");
-
+  sqlsrv_query($link,"delete FROM [SalesLT].[Customer] where FirstName='$_POST[firstname]'");
+                     
   ?>
   <script type="text/javascript">
     window.location.href=window.location.href;
@@ -104,9 +104,8 @@ if(isset($_POST["delete"])){
   <?php
 }
 
-
 if(isset($_POST["update"])){
-  sqlsrv_query($link,"update SalesLT.Customer set firstname='$_POST[lastname]' where firstname='$_POST[firstname]'");
+  sqlsrv_query($link,"update [SalesLT].[Customer] set FirstName='$_POST[lastname]' where FirstName='$_POST[firstname]'");
 
   ?>
   <script type="text/javascript">

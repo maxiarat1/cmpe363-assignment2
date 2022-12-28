@@ -17,7 +17,7 @@ include "connection.php"
 
 <div class="container">
 <div class="col-lg-4">
-  <h2>Assigment-2-Maximilian</h2>
+  <h2>Assigment-2-Maximilian-119200099</h2>
   <form action="" name="form1" method="post">
     
     <div class="form-group">

@@ -85,7 +85,7 @@ include "connection.php"
 
 if(isset($_POST["insert"]))
 {
-  sqlsrv_query($link,"insert into table values(NULL,NULL,NULL,'$_POST[firstname]',NULL,'$_POST[lastname]',NULL,NULL,NULL,'$_POST[address]','$_POST[phone]',NULL,NULL,NULL,NULL)");
+  sqlsrv_query($link,"insert into [SalesLT].[Customer] values(NULL,NULL,NULL,'$_POST[firstname]',NULL,'$_POST[lastname]',NULL,NULL,NULL,'$_POST[address]','$_POST[phone]',NULL,NULL,NULL,NULL)");
   
   ?>
   <script type="text/javascript">

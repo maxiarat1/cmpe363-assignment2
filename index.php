@@ -63,7 +63,7 @@ include "connection.php"
     </thead>
     <tbody>
       <?php
-        $res=mysqli_query($link,"select FirstName, LastName, EmailAddress, Phone from SalesLT.Customer");
+        $res=sqlsrv_query($link,"select FirstName, LastName, EmailAddress, Phone from SalesLT.Customer");
         while($row=mysqli_fetch_array($res)){
           echo "<tr>";
           echo "<td>"; echo $row["id"] ;echo"</td>";
@@ -85,7 +85,7 @@ include "connection.php"
 
 if(isset($_POST["insert"]))
 {
-  mysqli_query($link,"insert into table values(NULL,NULL,NULL,'$_POST[firstname]',NULL,'$_POST[lastname]',NULL,NULL,NULL,'$_POST[address]','$_POST[phone]',NULL,NULL,NULL,NULL)");
+  sqlsrv_query($link,"insert into table values(NULL,NULL,NULL,'$_POST[firstname]',NULL,'$_POST[lastname]',NULL,NULL,NULL,'$_POST[address]','$_POST[phone]',NULL,NULL,NULL,NULL)");
   
   ?>
   <script type="text/javascript">
@@ -95,7 +95,7 @@ if(isset($_POST["insert"]))
 
 }
 if(isset($_POST["delete"])){
-  mysqli_query($link,"delete from SalesLT.Customer where firstname='$_POST[firstname]'");
+  sqlsrv_query($link,"delete from SalesLT.Customer where firstname='$_POST[firstname]'");
 
   ?>
   <script type="text/javascript">
@@ -106,7 +106,7 @@ if(isset($_POST["delete"])){
 
 
 if(isset($_POST["update"])){
-  mysqli_query($link,"update SalesLT.Customer set firstname='$_POST[lastname]' where firstname='$_POST[firstname]'");
+  sqlsrv_query($link,"update SalesLT.Customer set firstname='$_POST[lastname]' where firstname='$_POST[firstname]'");
 
   ?>
   <script type="text/javascript">

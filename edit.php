@@ -7,7 +7,7 @@ $lastname="";
 $address="";
 $phone="";
 
-$res=mysqli_query($link,"select FirstName, LastName, EmailAddress, Phone from SalesLT.Customer where id=$id");
+$res=sqlsrv_query($link,"select FirstName, LastName, EmailAddress, Phone from SalesLT.Customer where id=$id");
 while($row=mysqli_fetch_array($res)){
     $firstname=$row["FirstName"];
     $lastname=$row["LastName"];

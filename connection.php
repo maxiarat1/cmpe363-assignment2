@@ -8,6 +8,12 @@
     //Establishes the connection
     $link = sqlsrv_connect($serverName, $connectionOptions);
     
+    if($link) {
+        echo "Connection established.<br />";
+    }else{
+        echo "Connection could not be established.<br />";
+     die( print_r( sqlsrv_errors(), true));
+    }
     
     
     /*$tsql= "SELECT TOP 20 pc.Name as CategoryName, p.name as ProductName

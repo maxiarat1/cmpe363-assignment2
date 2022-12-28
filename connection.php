@@ -7,6 +7,7 @@
     );
     //Establishes the connection
     $link = sqlsrv_connect($serverName, $connectionOptions);
+    //$tblEmployee = "[SalesLT].[Customer]";
     
     if($link) {
         echo "Connection established with the Database.<br />";

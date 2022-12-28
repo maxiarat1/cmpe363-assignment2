@@ -6,8 +6,8 @@ $firstname="";
 $lastname="";
 $address="";
 $phone="";
-
-$res=sqlsrv_query($link,"select FirstName, LastName, EmailAddress, Phone from [SalesLT].[Customer] where id=$id");
+                       
+$res=sqlsrv_query($link,"select FirstName, LastName, EmailAddress, Phone from [SalesLT].[Customer] where CustomerID=$id");
 while($row=mysqli_fetch_array($res)){
     $firstname=$row["FirstName"];
     $lastname=$row["LastName"];
@@ -66,13 +66,15 @@ while($row=mysqli_fetch_array($res)){
 </body>
 
 <?php
-if(isset($_POST["update"])){
-    mysqli_query($link,"update SalesLT.Customer set FirstName='$_POST[firstname]',LastName='$_POST[lastname]',EmailAddress='$_POST[address]',Phone='$_POST[phone]' where id=$id");
+if(isset($_POST["update"])){    UPDATE Customers SET ContactName='Juan' WHERE Country='Mexico';
+    sqlsrv_query($link,"update [SalesLT].[Customer] set FirstName='$_POST[firstname]',LastName='$_POST[lastname]',EmailAddress='$_POST[address]',Phone='$_POST[phone]' where CustomerID=$id");
     ?>
     <script type= "text/javascript">
         window.location="index.php";
     </script>
-
+UPDATE Customers
+SET ContactName='Juan'
+WHERE Country='Mexico';
     <?php
 }
 ?>

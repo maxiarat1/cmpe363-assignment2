@@ -63,7 +63,7 @@ include "connection.php"
     </thead>
     <tbody>
       <?php
-        $res=sqlsrv_query($link,"select FirstName, LastName, EmailAddress, Phone from SalesLT.Customer");
+        $res=sqlsrv_query($link,"select FirstName, LastName, EmailAddress, Phone FROM [SalesLT].[Customer]");
         while($row=mysqli_fetch_array($res)){
           echo "<tr>";
           echo "<td>"; echo $row["id"] ;echo"</td>";
@@ -95,7 +95,7 @@ if(isset($_POST["insert"]))
 
 }
 if(isset($_POST["delete"])){
-  sqlsrv_query($link,"delete from SalesLT.Customer where firstname='$_POST[firstname]'");
+  sqlsrv_query($link,"delete FROM [SalesLT].[Customer] where firstname='$_POST[firstname]'");
 
   ?>
   <script type="text/javascript">

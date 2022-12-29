@@ -52,7 +52,7 @@ include "connection.php"
 <table class="table table-bordered">
     <thead>
       <tr>
-      <th>#</th>
+        <th>#</th>
         <th>Firstname</th>
         <th>Lastname</th>
         <th>Email</th>
@@ -64,16 +64,17 @@ include "connection.php"
     <tbody>
       <?php
         $res=sqlsrv_query($link,"select FirstName, LastName, EmailAddress, Phone FROM [SalesLT].[Customer]");
-        echo $res['LastName'].", ".$res['FirstName']."<br />";
+        
         while($row=sqlsrv_fetch_array($res)){
+          //echo $row['LastName'].", ".$row['FirstName']."<br />";
           echo "<tr>";
           echo "<td>"; echo $row["CustomerID"] ;echo"</td>";
           echo "<td>"; echo $row["FirstName"] ;echo"</td>";
           echo "<td>"; echo $row["LastName"] ;echo"</td>";
           echo "<td>"; echo $row["EmailAddress"] ;echo"</td>";
           echo "<td>"; echo $row["Phone"] ;echo"</td>";
-          echo "<td>"; ?> <a href="edit.php?id=<?php echo $row["id"]; ?>"> <button type="button" class="btn btn-success">Edit</button></a> <?php echo"</td>";
-          echo "<td>"; ?> <a href="delete.php?id=<?php echo $row["id"]; ?>"> <button type="button" class="btn btn-danger">Delete</button></a> <?php echo"</td>";
+          echo "<td>"; ?> <a href="edit.php?id=<?php echo $row["CustomerID"]; ?>"> <button type="button" class="btn btn-success">Edit</button></a> <?php echo"</td>";
+          echo "<td>"; ?> <a href="delete.php?id=<?php echo $row["CustomerID"]; ?>"> <button type="button" class="btn btn-danger">Delete</button></a> <?php echo"</td>";
           echo "<tr>";
         }
       ?>

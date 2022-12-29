@@ -1,6 +1,6 @@
 <?php
 include "connection.php";
-$id=$_GET["$id"];
+$id=$_GET["$CustomerID"];
 
 $firstname="";
 $lastname="";

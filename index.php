@@ -63,7 +63,7 @@ include "connection.php"
     </thead>
     <tbody>
       <?php
-        $res=sqlsrv_query($link,"select FirstName, LastName, EmailAddress, Phone FROM [SalesLT].[Customer]");
+        $res=sqlsrv_query($link,"select CustomerID,FirstName, LastName, EmailAddress, Phone FROM [SalesLT].[Customer]");
        
         if( $res === false) {
             die( print_r( sqlsrv_errors(), true) );

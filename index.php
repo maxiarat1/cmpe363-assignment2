@@ -64,7 +64,7 @@ include "connection.php"
     <tbody>
       <?php
         $res=sqlsrv_query($link,"select FirstName, LastName, EmailAddress, Phone FROM [SalesLT].[Customer]");
-        while($row=mysqli_fetch_array($res)){
+        while($row=sqlsrv_fetch_array($res)){
           echo "<tr>";
           echo "<td>"; echo $row["id"] ;echo"</td>";
           echo "<td>"; echo $row["firstname"] ;echo"</td>";

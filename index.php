@@ -66,11 +66,11 @@ include "connection.php"
         $res=sqlsrv_query($link,"select FirstName, LastName, EmailAddress, Phone FROM [SalesLT].[Customer]");
         while($row=sqlsrv_fetch_array($res)){
           echo "<tr>";
-          echo "<td>"; echo $row["id"] ;echo"</td>";
-          echo "<td>"; echo $row["firstname"] ;echo"</td>";
-          echo "<td>"; echo $row["lastname"] ;echo"</td>";
-          echo "<td>"; echo $row["address"] ;echo"</td>";
-          echo "<td>"; echo $row["phone"] ;echo"</td>";
+          echo "<td>"; echo $row["CustomerID"] ;echo"</td>";
+          echo "<td>"; echo $row["FirstName"] ;echo"</td>";
+          echo "<td>"; echo $row["LastName"] ;echo"</td>";
+          echo "<td>"; echo $row["EmailAddress"] ;echo"</td>";
+          echo "<td>"; echo $row["Phone"] ;echo"</td>";
           echo "<td>"; ?> <a href="edit.php?id=<?php echo $row["id"]; ?>"> <button type="button" class="btn btn-success">Edit</button></a> <?php echo"</td>";
           echo "<td>"; ?> <a href="delete.php?id=<?php echo $row["id"]; ?>"> <button type="button" class="btn btn-danger">Delete</button></a> <?php echo"</td>";
           echo "<tr>";

@@ -66,7 +66,7 @@ while($row=mysqli_fetch_array($res)){
 </body>
 
 <?php
-if(isset($_POST["update"])){    UPDATE Customers SET ContactName='Juan' WHERE Country='Mexico';
+if(isset($_POST["update"])){   
     sqlsrv_query($link,"update [SalesLT].[Customer] set FirstName='$_POST[firstname]',LastName='$_POST[lastname]',EmailAddress='$_POST[address]',Phone='$_POST[phone]' where CustomerID=$id");
     ?>
     <script type= "text/javascript">

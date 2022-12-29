@@ -47,7 +47,7 @@ include "connection.php"
 </div>
 </div>
 
-<div class="col-lg-4">
+<div class="col-lg-12">
  
 <table class="table table-bordered">
     <thead>

@@ -21,7 +21,7 @@ include "connection.php"
   <form action="" name="form1" method="post">
     
     <div class="form-group">
-      <label for="EmpName">EmpName</label>
+      <label for="EmpName">EmpName (Also you can type here to delete)</label>
       <input type="text" class="form-control" id="EmpName" placeholder="Enter first name" name="firstname">
     </div>
     
